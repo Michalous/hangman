@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Victory
+{% endblock %}
+
+{% block main %}
+    <h1>Congratulations you've guessed the word {{ secretWord }}!</h1>
+    <h2>Your score is: {{ score }}</h2>
+    <form action="/" method="get">
+        <button value="continue" name="button">Continue</button>
+    </form>
+{% endblock %}

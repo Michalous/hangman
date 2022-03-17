@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Play Game
+{% endblock %}
+
+{% block main %}
+    <div class="score">
+        <h2>Your score: {{ score }}</h2>
+    </div>
+    <div id="container">
+        <canvas id="hangman" width="180" height="250"></canvas>
+    </div>
+    <div class="buttons">
+        <h1>{{ guessedWord }}</h1>
+        
+        <form action="/" method="post">
+        {% for letter in available_letters %}
+            <button class="letter" name="button" value="{{ letter }}">{{ letter }}</button>
+        {% endfor %}
+         </form>
+    </div>
+    <p>Attempts left:</p>
+    <p id="guesses">{{ guesses }}</p>
+    <script src="script.js"></script>
+    <!-- https://codepen.io/xavier_bs/pen/MMNGyG -->
+
+{% endblock %}
